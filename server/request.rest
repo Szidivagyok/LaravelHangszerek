@@ -8,57 +8,41 @@
 ### teszt
 get {{host}}/api/
 
-### login
-# @name login
-POST {{host}}/api/users/login
-Content-Type: application/json
 
-{
-    "email": "test@example.com",
-    "password": "123"
-}
+### get all 
+GET  {{host}}/api/instruments
 
-###
-@token = {{login.response.body.user.token}}
+### get 
+GET  {{host}}/api/instruments/1
 
-### get users
-GET  {{host}}/api/users
-Accept: application/json
-Authorization: Bearer {{token}}
-
-
-### get products
-GET  {{host}}/api/products
-
-### post products
-POST  {{host}}/api/products
+### post 
+POST  {{host}}/api/instruments
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+
 
 {
-    "category": "Bogyós",
-    "name": "Málna2",
-    "description": "Kézzel termelt egészség",
-    "picture": "https:\/\/hur.webmania.cc\/img\/malna.jpg",
+    "id": 10000,
+    "name": "sárga furulya",
+    "description": "hangszer",
     "price": 8000,
     "stock": 500
 }
 
 
 ### patch products
-PATCH  {{host}}/api/products/20
+PATCH  {{host}}/api/instruments/20
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+
 
 {
-    "category": "Bogyósok",
+    "id": 20,
     "price": 4000
 }
 
 ### delete product by id
-DELETE  {{host}}/api/products/21
+DELETE  {{host}}/api/instruments
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+

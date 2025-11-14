@@ -14,19 +14,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Törlünk adatokat, mielőtt seedelünk
-        DB::statement('DELETE FROM products');
-        DB::statement('DELETE FROM users');
+        DB::statement('DELETE FROM instruments');
  
         // Seederek futtatása
         $this->call([
-            UserSeeder::class,
-            ProductSeeder::class,
+            InstrumentSeeder::class,
         ]);
  
-        // Teszt felhasználó létrehozása
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Teszt felhasználó létrehozás
     }
 }

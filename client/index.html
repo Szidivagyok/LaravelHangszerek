@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangszerek</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <h1>Hangszer lista</h1>
+        <button @click="getAllHangszer">Összes hangszer</button>
+        <button @click="getHangszer">Egy hangszer</button>
+        <button @click="createHangszer">hangszer létrehozása</button>
+        <button @click="updateHangszer">hangszer frissítése</button>
+        <button @click="deleteHangszer">hangszer törlése</button>
+
+    </div>
+
+    <script src="my.js"></script>
+</body>
+</html>
